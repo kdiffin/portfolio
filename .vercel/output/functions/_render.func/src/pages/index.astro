@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+import Layout from "@/layouts/Layout.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+import PostCard from "@/components/PostCard.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Link from "@/components/shared/Link.astro";
+import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
+import { LinkPreviewDemo } from "@/components/react/LinkHover";
+import presentation from "@/data/presentation";
+import projects from "@/data/projects";
+
+// const posts = (await getCollection("posts")).sort(function (first, second) {
+//   return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+// });
+---
+
+<Layout>
+  <main class="flex flex-col gap-20">
+    <article
+      class="flex flex-col gap-8 md:flex-row-reverse md:justify-end md:gap-12"
+    >
+      <div class="flex flex-col gap-8">
+        <h1 class="text-3xl text-neutral-100">
+          Hey, I'm
+          <a
+            href="https://github.com/kdiffin"
+            target="_blank"
+            class="transition duration-500 ease-in-out hover:text-orange-500"
+            >kdiffin</a
+          >
+          💯
+        </h1>
+
+        <h2 class="w-auto max-w-[60ch] leading-6">
+          Azerbaijani dev with over 2 years of web experience. Currently working
+          on my DSA skills and learning C++ for the RFO olympiad. I specialize
+          in making web apps and love making fun projects.
+        </h2>
+        <LinkPreviewDemo />
+      </div>
+    </article>
+
+    <article class="flex flex-col gap-8">
+      <header class="flex w-full flex-row justify-between gap-2">
+        <h3 class="text-lg text-neutral-100">
+          Selected projects ({projects.length})
+        </h3>
+      </header>
+      {projects.length === 0 && <p>oof</p>}
+
+      <section class="flex flex-col gap-4">
+        {
+          projects.length !== 0 &&
+            projects.map((project) => <ProjectCard {...project} />)
+        }
+      </section>
+    </article>
+
+    <article class="flex flex-col gap-8">
+      <header class="flex w-full flex-row justify-between gap-2">
+        <h3 class="text-lg text-neutral-100">Latest posts</h3>
+      </header>
+      <p>Don't expect blogs anytime soon! 😭</p>
+    </article>
+  </main>
+</Layout>
+
+<!-- <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+        {
+          posts.length !== 0 &&
+            posts
+              .slice(0, 2)
+              .map((post) => (
+                <PostCard
+                  publishedAt={post.data.publishedAt}
+                  title={post.data.title}
+                  description={post.data.description}
+                  slug={post.slug}
+                />
+              ))
+        }
+      </section> -->
+
+<!-- footer -->
+<!-- <article class="flex flex-col gap-8">
+      <header class="flex w-full flex-row justify-between gap-2">
+        <h3 class="text-lg text-neutral-100">Get in touch</h3>
+      </header>
+      <p>
+        Email me at <Link
+          href={`mailto:${presentation.email}`}
+          label={presentation.email}
+        /> or follow me via my social links.
+      </p>
+    </article> -->
