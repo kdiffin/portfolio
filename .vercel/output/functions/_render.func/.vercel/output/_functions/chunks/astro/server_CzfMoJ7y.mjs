@@ -123,7 +123,7 @@ function createAstro(site) {
   return {
     // TODO: this is no longer necessary for `Astro.site`
     // but it somehow allows working around caching issues in content collections for some tests
-    site: new URL(site) ,
+    site: void 0,
     generator: `Astro v${ASTRO_VERSION}`,
     glob: createAstroGlobFn()
   };
@@ -2051,4 +2051,4 @@ function spreadAttributes(values = {}, _name, { class: scopedClassName } = {}) {
   return markHTMLString(output);
 }
 
-export { ASTRO_VERSION as A, REROUTABLE_STATUS_CODES as B, DEFAULT_404_COMPONENT as D, Fragment as F, NOOP_MIDDLEWARE_HEADER as N, ROUTE_TYPE_HEADER as R, createComponent as a, addAttribute as b, createAstro as c, decodeKey as d, renderComponent as e, renderHead as f, renderSlot as g, REROUTE_DIRECTIVE_HEADER as h, decryptString as i, createSlotValueFromString as j, isRenderInstruction as k, renderSlotToString as l, maybeRenderHead as m, renderJSX as n, chunkToString as o, originPathnameSymbol as p, renderPage as q, renderTemplate as r, spreadAttributes as s, REWRITE_DIRECTIVE_HEADER_KEY as t, unescapeHTML as u, REWRITE_DIRECTIVE_HEADER_VALUE as v, renderEndpoint as w, clientLocalsSymbol as x, responseSentSymbol as y, clientAddressSymbol as z };
+export { ASTRO_VERSION as A, REROUTABLE_STATUS_CODES as B, DEFAULT_404_COMPONENT as D, Fragment as F, NOOP_MIDDLEWARE_HEADER as N, ROUTE_TYPE_HEADER as R, createAstro as a, addAttribute as b, createComponent as c, decodeKey as d, renderComponent as e, renderHead as f, renderSlot as g, REROUTE_DIRECTIVE_HEADER as h, decryptString as i, createSlotValueFromString as j, isRenderInstruction as k, renderSlotToString as l, maybeRenderHead as m, renderJSX as n, chunkToString as o, originPathnameSymbol as p, renderPage as q, renderTemplate as r, spreadAttributes as s, REWRITE_DIRECTIVE_HEADER_KEY as t, unescapeHTML as u, REWRITE_DIRECTIVE_HEADER_VALUE as v, renderEndpoint as w, clientLocalsSymbol as x, responseSentSymbol as y, clientAddressSymbol as z };
