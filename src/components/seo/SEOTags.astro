@@ -1,7 +1,6 @@
 ---
 import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
-import { SITE_URL } from "@/data/config";
 import type { HeadTags } from "@/utils/types/HeadTags";
 
 type Props = HeadTags;
@@ -11,7 +10,7 @@ const { title, description, noindex, og } = Astro.props;
 const DEFAULT_TITLE_PAGE = "kdiffin's portfolio";
 const DEFAULT_DESCRIPTION_PAGE =
   " Welcome to kdiffin's portfolio. I'm an Azerbaijani dev with over 2 years of web experience. Currently working on my DSA skills and learning C++ for the RFO olympiad. I specialize in making web apps and love making fun projects.";
-const DEFAULT_URL_SITE = SITE_URL;
+const DEFAULT_URL_SITE = "https://kdiffin.vercel.app";
 
 const openGraph = {
   title: title || og?.title || DEFAULT_TITLE_PAGE,
