@@ -2,30 +2,36 @@ export type Project = {
   title: string;
   techs: string[];
   link: string;
+  imageSrc: string;
   isComingSoon?: boolean;
 };
 
 const projects: Project[] = [
   {
-    title: "Puppetfactory",
-    techs: ["Next.js", "TypeScript"],
-    link: "https://puppetfactory.app/",
+    title: "diffin-dex",
+    techs: ["Tauri", "Desktop App", "Next.js"],
+    link: "https://diffindex.vercel.app/",
+    imageSrc: "/diffindex.png",
   },
   {
-    title: "Script to generate Next.js project",
-    techs: ["Shell"],
-    link: "https://github.com/MaeWolff/create-nextjs-app-bash-script",
+    title: "diffin-list",
+    techs: ["Next.js", "Prisma", "T3"],
+    link: "https://diffinlist.vercel.app/",
+    imageSrc: "/diffinlist.png",
+  },
+
+  {
+    title: "Bono",
+    techs: ["Hackathon project", "T3", "Frontend"],
+    link: "https://bono-one.vercel.app/",
+    imageSrc: "/bono.png",
   },
   {
-    title: "Dictionary App",
-    techs: ["Next.js", "react-query", "zod"],
-    link: "https://github.com/MaeWolff/dictionary-app",
-  },
-  {
-    title: "Portfolio / Template",
-    techs: ["Astro", "TypeScript"],
-    link: "https://github.com/MaeWolff/astro-portfolio-template",
+    title: "diffin-chat",
     isComingSoon: true,
+    link: "#",
+    techs: ["idk"],
+    imageSrc: "/",
   },
 ];
 

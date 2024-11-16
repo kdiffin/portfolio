@@ -3,7 +3,7 @@ import type { Project } from "@/data/projects";
 
 type Props = Project;
 
-const { title, techs, link, isComingSoon } = Astro.props;
+const { title, techs, link, isComingSoon, imageSrc } = Astro.props;
 
 const formatTechs = (values: string[]) =>
   values.toString().replaceAll(",", " • ");
@@ -26,7 +26,8 @@ const formatTechs = (values: string[]) =>
   {
     !isComingSoon && (
       <a
-        class="group flex w-full cursor-pointer flex-col justify-between gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400 md:flex-row md:items-center"
+        class="group flex w-full cursor-pointer flex-col justify-between gap-2 rounded-md border border-neutral-700
+         p-4 transition-all duration-300 hover:-translate-y-2 hover:border-orange-500 md:flex-row md:items-center"
         href={link}
         target="_blank"
       >
@@ -55,6 +56,13 @@ const formatTechs = (values: string[]) =>
             stroke-linejoin="round"
           />
         </svg>
+
+        <div
+          class="absolute left-0 top-10 z-10 hidden  w-96 max-w-none rounded-xl bg-zinc-800 p-2 transition-none  duration-0
+                 group-hover:block "
+        >
+          <img src={imageSrc} alt="" class="rounded-xl" width={500} />
+        </div>
       </a>
     )
   }
